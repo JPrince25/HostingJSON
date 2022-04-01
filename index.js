@@ -120,6 +120,39 @@ app.get('/batman', (request, response) => {
 	response.send(JSON.stringify(spiderMan, null, 4))
 })
 
+
+// Returns Jacob as JSON.
+var jacobPrince = {
+	"firstName":"Jacob",
+	"lastName":"Prince",
+	"preferredName":"Jacob",
+	"email":"jacobmprince@lewisu.edu",
+	"phoneNumber":"815-735-2004",
+	"city":"Lockport",
+	"state":"IL",
+	"zip":"60441",
+	"lat":"41.5895",
+	"lng":"88.0578",
+	"favoriteHobby":"Reading Comics",
+	"class":"cpsc-24500-001",
+	"room":"AS-104-A",
+	"startTime":"2 PM CT",
+	"seatNumber":"6",
+	"inPerson":[
+		"Monday",
+		"Wednesday"
+	],
+	"virtual":[
+		"Friday"
+	]
+}
+
+app.get('/jacobprince', (request, response) => {
+	console.log('Calling "/jacobprince" on the Node.js server.')
+	response.type('application/json')
+	response.send(JSON.stringify(jacobPrince, null, 4))
+})
+
 // Custom 404 page.
 app.use((request, response) => {
   response.type('text/plain')
