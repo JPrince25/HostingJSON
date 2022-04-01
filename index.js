@@ -125,9 +125,7 @@ app.get('/batman', (request, response) => {
 var jacobPrince = {
 	"firstName":"Jacob",
 	"lastName":"Prince",
-	"preferredName":"Jacob",
 	"email":"jacobmprince@lewisu.edu",
-	"phoneNumber":"815-735-2004",
 	"city":"Lockport",
 	"state":"IL",
 	"zip":"60441",
@@ -151,6 +149,38 @@ app.get('/jacobprince', (request, response) => {
 	console.log('Calling "/jacobprince" on the Node.js server.')
 	response.type('application/json')
 	response.send(JSON.stringify(jacobPrince, null, 4))
+})
+
+// Return Dick Grayson as JSON.
+var  nightwing = {
+	"firstName":"Richard",
+	"lastName":"Grayson",
+	"preferredName":"Nightwing",
+	"email":"betterthanbatman@lewisu.edu",
+	"phoneNumber":"800-wng-ding",
+	"city":"Bludhaven",
+	"state":"NJ",
+	"zip":"07101",
+	"lat":"40.73",
+	"lng":"-74.17",
+	"favoriteHobby":"Trapeze",
+	"class":"cpsc-24700-001",
+	"room":"AS-104-A",
+	"startTime":"2 PM CT",
+	"seatNumber":"",
+	"inPerson":[
+		"Wednesday"
+	],
+	"virtual":[
+		"Monday",
+		"Friday"
+	]
+}
+
+app.get('/nightwing', (request, response) => {
+	console.log('Calling "/nightwing" on the Node.js server.')
+	response.type('application/json')
+	response.send(JSON.stringify(nightwing, null, 4))
 })
 
 // Custom 404 page.
